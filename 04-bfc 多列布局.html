@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .column {
+            width: 31.33%;
+            background-color: green;
+            float: left;
+            margin: 0 1%;
+        }
+
+        .column:last-child {
+            float: none;
+            /*overflow: hidden;*/
+            /*现在即使容器的宽度会有轻微的变化，但是布局也不会中断。
+            当然，这并不是多列布局的最好选择，但它是防止最后一列下滑问题的一种方法*/
+        }
+    </style>
+</head>
+<body>
+
+        <!--在多列布局中使用BFC
+        如果我们正在创建的一个多列布局占满了整个容器的宽度，在某些浏览器中最后一列有时候将会被挤到下一行。
+        会发生这样可能是因为浏览器舍入（取整）了列的宽度使得总和的宽度超过了容器的宽度。
+        然而，如果我们在一个列的布局中建立了一个新的BFC，
+        它将会在前一列填充完之后的后面占据所剩余的空间
+        -->
+<div class="container">
+    <div class="column">column 1</div>
+    <div class="column">column 2</div>
+    <div class="column">column 3</div>
+</div>
+</body>
+</html>

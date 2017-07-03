@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .dv{
+            width: 300px;
+            height: 300px;
+            border:3px solid red;
+
+        }
+        .box{
+            width: 50px;
+            height: 50px;
+            background-color: pink;
+            float: left;
+        }
+        p{
+            overflow: hidden;
+        }
+    </style>
+</head>
+            <!--使用BFC来防止文字环绕-->
+            <!--在BFC中，每个盒子的左外边框紧挨着左边框的包含块（从右到左的格式化时，则为右边框紧挨）。
+            即使在浮动里也是这样的（尽管一个盒子的边框会因为浮动而萎缩），
+            除非这个盒子的内部创建了一个新的BFC
+            （这种情况下,由于浮动，盒子本身将会变得更窄）
+
+            如果这个p元素创建了一个新的BFC,那么它将不会紧挨着容器块的左边缘。
+            这个可以通过简单的给p元素添加overflow: hidden来实现。
+            这个方法创建了一个新的BFC解决了文字环绕在浮动元素周围的问题。-->
+<body>
+<div class="dv">
+    <div class="box">div</div>
+    <p>
+内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+    </p>
+
+</div>
+</body>
+</html>

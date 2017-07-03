@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            text-align: center;
+            width: 500px;
+            margin: 0 auto;
+        }
+        .bx {
+            background-color: red;
+            overflow: hidden;
+
+            /*  设置了overflow：hidden 之后。触发发BFC， 在计算高度的时候，会把浮动的元素的高度也 算在内
+          父容器将不会有任何的高度，它将不会包含已经浮动的子元素。
+          为了解决这个问题，我们通过添加overflow: hidden，
+          在容器中创建一个新的BFC。*/
+        }
+        .bx div {
+            height: 200px;
+            width: 200px;
+            background-color: pink;
+            margin: 10px;
+            float: left;
+        }
+
+    </style>
+</head>
+<body>
+                <!--使用BFC来包含浮动-->
+                <!--很多时候我们会碰到这种情况，一个容器里有浮动元素。
+                        由于这个原因，容器元素没有高度，
+                它的浮动孩子将会脱离页面的常规流。
+                我们通常使用清除浮动来解决这个问题，最受欢迎的方法是使用一个
+                clearfix的伪类元素。
+                但我们同样可以通过定义一个BFC来达到这个目的。-->
+<div class="bx">
+    <div class="son"></div>
+    <div class="three"></div>
+</div>
+
+</body>
+</html>

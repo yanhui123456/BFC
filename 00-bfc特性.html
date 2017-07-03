@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<!--BFC全称”Block Formatting Context”, 中文为“块级格式化上下文”
+
+什么时候会触发BFC呢？常见的如下：
+
+float的值不为none。
+overflow的值为auto,scroll或hidden。
+display的值为table-cell, table-caption, inline-block中的任何一个。
+position的值不为relative和static。
+
+
+3. 与纯流体特性布局的优势
+BFC自适应布局优势总结了下面2点：
+
+1,自适应内容由于封闭，更健壮，容错性强。
+比方说，内部clear:both不会与兄弟float产生矛盾。
+而纯流体布局，clear:both会让后面内容无法和float元素在一个水平上，产生布局问题。
+
+2,自适应内容自动填满浮动以为区域，无需关心浮动元素宽度，可以整站大规模应用。
+而纯流体布局，需要大小不确定的margin/padding等值撑开合适间距，无法CSS组件化
+
+-->
+</body>
+</html>
